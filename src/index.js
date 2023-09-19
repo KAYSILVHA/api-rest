@@ -1,11 +1,11 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const rotas = require('./rotas');
+const app = express();
+app.use(express.json());
 
 
-app.get('/', (req, res)=>{
-  res.send("Tudo ok")
-})
+app.use(rotas);
 
 app.listen(3000, ()=>{
   console.log('Seu servidor está rodando na porta 3000')
-})
+});
